@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CellStart </title>
+    <meta name="description"
+        content="CellStart CHRONO NAD+ - Advanced NAD+ supplements for cellular health and longevity. Boost energy, enhance cognitive function, and support healthy aging." />
+    <meta name="author" content="CellStart" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Source+Sans+Pro:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin:wght@600;700&family=Poppins:wght@600;700&family=Source+Sans+Pro:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            /* Color System */
+            --primary-teal: #eff9fe;
+            --primary-black: #131313;
+            --primary-light: #949b9e;
+            --gray-200: #e2e8f0;
+            --gray-600: #475569;
+            --blue-600: #0057a6;
+            --green-600: #118064;
+            --white: #ffffff;
+
+            /* Typography */
+            --font-header: 'Cabin', sans-serif;
+            --font-marketing: 'Cabin', sans-serif;
+            --font-subheader: 'Poppins', sans-serif;
+            --font-strong: 'Poppins', sans-serif;
+            --font-body: 'Source Sans Pro', sans-serif;
+
+            /* Font sizes */
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 0.75rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+            background-color: #eff9fe;
+        }
+
+        .main-container {
+            max-width: 100%;
+            margin: 30px;
+            background-color: var(--primary-teal);
+        }
+
+        .main-section {
+            padding: 20px !important;
+        }
+
+        .header {
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) 0;
+        }
+
+        .logo {
+            height: 30px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            list-style: none;
+            font-family: var(--font-header);
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #002f5c;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--font-size-xl);
+            cursor: pointer;
+        }
+
+        .marketing-title {
+            font-family: var(--font-marketing);
+            font-weight: 700;
+        }
+
+        .sub-header {
+            font-family: var(--font-subheader);
+            font-weight: 600;
+        }
+
+        .strong-title {
+            font-family: var(--font-strong);
+            font-weight: 700;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #bfc4c7;
+            border-radius: 6px;
+            max-width: 80%;
+            margin: 0 auto;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+        }
+
+        .card-header {
+            border-top: 2px solid #727678;
+            border-bottom: 2px solid #727678;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1rem;
+            color: #131313;
+        }
+
+        .card-header .version {
+            border-left: 2px solid #727678;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            background-color: #aee6f8;
+        }
+
+        .card-header span {
+            padding-left: 20px;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #000;
+            padding-bottom: .5rem;
+            margin-bottom: 2rem;
+            font-family: var(--font-subheader);
+            font-weight: 600;
+        }
+
+        .version-box {
+            border: 1px solid var(--border);
+            padding: 0.2rem 0.6rem;
+            font-size: 0.9rem;
+            color: var(--blue);
+        }
+
+        .line {
+            border-bottom: 1px solid #000;
+            margin: 0.5rem 0 2rem 0;
+        }
+
+        .title {
+            color: #131313;
+            font-size: 3.5rem;
+            font-weight: 700;
+            font-family: var(--font-header);
+            margin-bottom: 0.5rem;
+            width: 40%;
+            line-height: 60px
+        }
+
+        .brand-title {
+            color: #131313;
+            font-size: 3.5rem;
+            font-weight: 700;
+            font-family: var(--font-header);
+            margin-bottom: 0.5rem;
+            width: 25%;
+            padding-left: 60px;
+            line-height: 60px
+        }
+
+        .brand-desc p {
+            font-family: var(--font-body);
+            width: 60%;
+
+        }
+
+        .subtitle {
+            color: #65696d;
+            margin-top: 10px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            width: 57%;
+        }
+
+        .brand-desc {
+            color: #65696d;
+            margin-top: 10px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            width: 57%;
+        }
+
+        .requirements {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            border-top: 1px solid transparent;
+        }
+
+        .req-item {
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            border-left: 2px solid #ccc;
+        }
+
+        .req-item:first-child {
+            border-left: none;
+        }
+
+        .req-item h3 {
+            font-family: var(--font-subheader);
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin: 0;
+        }
+
+        .req-item ul li {
+            font-size: var(--font-size-xs);
+            line-height: 1.6;
+            margin-left: 15px;
+            color: #65696d;
+        }
+
+        .req-item a img {
+            width: 55px;
+            height: 50px;
+            color: var(--green-600);
+        }
+
+        .main-content {
+            padding: 30px;
+        }
+
+        .req-content {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .dos-donts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #f0f9ff;
+            border-bottom: 1px solid #aaa;
+            padding-bottom: 30px;
+        }
+
+        .dos,
+        .donts {
+            padding: 20px 40px;
+        }
+
+        .dos {
+            border-right: 1px solid #aaa;
+        }
+
+        .dos h2,
+        .donts h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .do-item,
+        .dont-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .do-item i {
+            color: #28a745;
+            font-size: 20px;
+            margin-right: 12px;
+            margin-top: 4px;
+        }
+
+        .dont-item i {
+            color: #ff4c4c;
+            font-size: 20px;
+            margin-right: 12px;
+            margin-top: 4px;
+        }
+
+        .do-text,
+        .dont-text {
+            max-width: 500px;
+        }
+
+        .do-text strong,
+        .dont-text strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .do-text p,
+        .dont-text p {
+            margin: 0;
+            font-size: 15px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .submit-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background-color: #eff9fe;
+        }
+
+        .submit-left {
+            padding: 30px 0px 20px 30px;
+        }
+
+        .submit-left h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: var(--font-header);
+            margin-bottom: 15px;
+            color: var(--primary-black);
+            padding-left: 20px;
+            padding-top: 40px;
+            width: 50%;
+            line-height: 40px;
+        }
+
+        .submit-left p {
+            font-size: 18px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            padding-left: 17px;
+            max-width: 360px;
+        }
+
+        .logos {
+            display: block;
+
+        }
+
+        .logos a img {
+            height: 120px;
+            width: 600px;
+        }
+
+        .submit-right {
+            padding: 30px;
+            border-left: 1px solid #727678;
+            border-bottom: 1px solid #727678;
+            height: 340px;
+
+        }
+
+        .submit-right p {
+            font-size: var(--font-size-base);
+            font-family: var(--font-subheader);
+            color: #0f1314;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .submit-right div a {
+            margin-bottom: 30px;
+        }
+
+        .submit-right div a {
+            color: #131313;
+            font-size: var(--font-size-lg);
+            font-family: var(--font-body);
+            word-break: break-word;
+            text-decoration: underline;
+
+        }
+
+        .submit-right a:hover {
+            text-decoration: underline;
+        }
+
+        .submit-note {
+            grid-column: span 2;
+            border-top: 1px solid #aaa;
+            padding: 20px;
+            font-size: 16px;
+            text-align: center;
+            background: #f0f9ff;
+        }
+
+        .submit-note strong {
+            text-decoration: underline;
+        }
+
+        .brand-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: #f0f9ff;
+            border: 1px solid #aaa;
+            padding: 30px;
+            gap: 20px;
+        }
+
+        .brand-left h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .brand-left p {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            border-top: 1px solid #333;
+            margin: 20px 0;
+        }
+
+        .logos {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .brand-bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 50px;
+            margin-top: 25px;
+        }
+
+        .brand-right h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .brand-right img {
+            height: 150px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+
+        .brand-right p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .border-btm {
+            border-bottom: 2px solid #727678;
+        }
+
+        .cellular-container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        .cell-card {
+            width: 60%;
+            overflow: hidden;
+        }
+
+        .cell-card a img {
+            width: 100%;
+        }
+
+        .cell-graph {
+            width: 40%;
+            overflow: hidden;
+        }
+
+        .cell-graph a img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nad-content {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            padding: 0px 20px;
+        }
+
+        .nad-content div ul li {
+            font-size: 16px;
+        }
+
+        .left-cross {
+            float: left;
+            width: 50px;
+            display: block;
+        }
+
+        .left-cross a img {
+            float: left
+        }
+
+        .how-to-submit {
+            margin-left: 60px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        .cell-bg-blue {
+            background-color: #0057a6;
+            padding: 15px;
+            border-radius: 25px;
+        }
+
+        .cell-bg-blue a img {
+            width: 300px;
+            height: 110px;
+        }
+
+        .cell-logo-part {
+            width: 30%;
+        }
+
+        .cell-main-part {
+            width: 26%;
+        }
+
+        .cell-main-part h3 {
+            padding-top: 45px;
+            padding-bottom: 20px;
+        }
+
+        .cell-main-part p {
+            font-family: var(--font-body);
+        }
+
+        .cell-product {
+            width: 25%;
+        }
+
+        .start-logo {
+            width: 35%;
+        }
+
+        .start-logo a img {
+            width: 300px;
+            height: 110px;
+        }
+
+        .cell-product a img {
+            width: 100%;
+            height: 300px
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cell-graph a img {
+                margin-top: 20px;
+            }
+
+            .nad-content {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+
+            .start-logo p {
+                text-align: center;
+            }
+
+            .cell-product {
+                width: 100%;
+            }
+
+            .cell-main-part {
+                width: 100%;
+                padding: 0px 20px;
+            }
+
+            .start-logo {
+                width: 100%;
+            }
+
+            .cell-logo-part {
+                width: 100%;
+            }
+
+            .cell-bg-blue a img {
+                width: 250px;
+                height: 80px;
+            }
+
+            .start-logo a img {
+                width: 250px;
+                height: 75px;
+            }
+
+            .brand-bottom {
+                display: flex;
+                flex-direction: column;
+                gap: 50px;
+            }
+
+            .brand-desc {
+                width: 100%;
+            }
+
+            .brand-desc p {
+                width: 100%;
+            }
+
+            .brand-title {
+                font-size: 2.5rem;
+                width: 100%;
+                line-height: 45px;
+            }
+
+            .submit-note {
+                max-width: 300px;
+            }
+
+            .submit-right {
+                height: auto;
+                max-width: 300px;
+                border: none;
+            }
+
+            .logos a img {
+                height: 80px;
+                width: 220px;
+            }
+
+            .submit-left p {
+                padding-left: 1px;
+                max-width: 300px;
+            }
+
+            .submit-left h2 {
+                padding-left: 1px;
+                padding-top: 1px;
+                width: 60%;
+            }
+
+            .how-to-submit {
+                margin-left: 1px;
+                width: 250px;
+            }
+
+            .how-to-submit p {
+                font-size: 13px;
+                width: 250px;
+            }
+
+            .left-cross {
+                display: none;
+            }
+
+            .cell-card {
+                width: 100%;
+            }
+
+            .cell-graph {
+                width: 100%;
+            }
+
+            .cellular-container {
+                flex-direction: column;
+            }
+
+            .brand-container {
+                grid-template-columns: 1fr;
+            }
+
+            .brand-right {
+                align-items: flex-start;
+            }
+
+            .submit-container {
+                grid-template-columns: 1fr;
+            }
+
+            .submit-left {
+                border-right: none;
+                border-bottom: 1px solid #aaa;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+            }
+
+            .logos {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .dos-donts-container {
+                grid-template-columns: 1fr;
+            }
+
+            .dos {
+                border-right: none;
+                border-bottom: 1px solid #aaa;
+                padding-bottom: 30px;
+                margin-bottom: 20px;
+            }
+
+            .dos,
+            .donts {
+                padding: 20px;
+            }
+
+            .title {
+                font-size: 2rem;
+                width: 100%;
+                line-height: 36px
+            }
+
+            .subtitle {
+                width: 100%;
+            }
+
+            .req-content {
+                flex-direction: column;
+                margin-top: 10px;
+                padding: 20px;
+            }
+
+            .main-container {
+                margin: 15px;
+            }
+
+            .main-content {
+                padding: 0px;
+            }
+
+            .container {
+                padding: 0 var(--spacing-md);
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #fff;
+                padding: 10px;
+                border: 1px solid #ddd;
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                width: 200px;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                font-size: 24px;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .requirements {
+                grid-template-columns: 1fr;
+            }
+
+            .req-item {
+                border-left: none;
+                border-top: 1px solid #ccc;
+                padding-top: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            .req-item:first-child {
+                border-top: none;
+                margin-top: 0;
+                padding-top: 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .loading {
+            opacity: 0;
+        }
+    </style>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <a href="https://ibb.co/SXVFPVfW"><img src="https://i.ibb.co/JRrDKr30/Slide-4-Logo-1.png"
+                            alt="Slide-4-Logo-1" class="logo" border="0" /></a>
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#assignment">Assignment</a></li>
+                        <li><a href="#submission">Submission and Assets Link</a></li>
+                        <li><a href="#product">Logo & Product</a></li>
+                        <li><a href="#content">Content Ideas</a></li>
+                        <li><a href="#dos">Do's and Don'ts</a></li>
+                    </ul>
+                </nav>
+                <button class="mobile-menu-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+    <main class="main-container">
+        <sction class="main-section">
+            <div class="main-content">
+                <div class="card-header">
+                    <span>Assignment</span>
+                    <span class="version">V 1.0</span>
+                </div>
+                <div id="assignment">
+                    <div class="req-content">
+                        <div class="title">Requirements</div>
+                        <div class="subtitle">
+                            The final deliverable should be a single self-contained HTML file.
+                            The page must be responsive and well-structured.
+                            It must include 2–3 sections of your choice.
+                            Feel free to stray from these requirements creatively so long as it works in a browser.
+                        </div>
+                    </div>
+                    <div class="requirements">
+                        <div class="req-item">
+                            <a href="https://imgbb.com/"><img src="https://i.ibb.co/PkH774r/pen.jpg" alt="pen"
+                                    border="0"></a>
+                            <h3>1. Hero Section:</h3>
+                            <ul>
+                                <li>
+                                    Create a hero banner for the company “CellStart” and product “ChronoNAD+”.
+                                    The section should include a main headline, a subtext,
+                                    and a call-to-action button, and 1–2 additional sections.
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="req-item">
+                            <a href="https://imgbb.com/"><img src="https://i.ibb.co/GfgztYWc/rocket.jpg" alt="rocket"
+                                    border="0"></a>
+                            <h3>1-2 Additional Sections</h3>
+                            <ul>
+                                <li>Create two to three additional
+                                    sections underneath the hero section
+                                    of your choice. </li>
+                                <li>These sections should be designed
+                                    to showcase the product's benefits or
+                                    features. Use the provided brand data
+                                    for content inspiration. </li>
+                            </ul>
+
+
+
+                        </div>
+                        <div class="req-item">
+                            <a href="https://imgbb.com/"><img src="https://i.ibb.co/b5K9cZkB/economy.jpg" alt="economy"
+                                    border="0"></a>
+                            <h3>Technical Requirements</h3>
+                            <ul>
+                                <li>
+                                    Build the page using either raw HTML and
+                                    CSS (no frameworks like Bootstrap) or in
+                                    Shopify's Liquid template format.
+                                </li>
+                                <li>Construct 1 self-contained mockup.html.
+                                    Inline CSS/JS and embed images (data URIs
+                                    or inline SVG). No network/CDN
+                                    dependencies.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="submission">
+                    <div class="submit-container">
+
+                        <div class="submit-left">
+                            <div class="left-cross">
+                                <a href="https://imgbb.com/"><img src="https://i.ibb.co/MkH2RRFc/cross-line.jpg"
+                                        alt="cross-line" border="0"></a>
+                            </div>
+                            <div class="how-to-submit">
+                                <h2>HOW TO SUBMIT:</h2>
+                                <p>
+                                    When finished, upload your file along with your resume and information
+                                    to our database on the link to the top right:
+                                </p>
+                                <p>
+                                    Additionally, you will find all brand assets found in the next slides
+                                    downloadable in the link to the right:
+                                </p>
+
+                                <div class="logos">
+                                    <a href="https://imgbb.com/"><img src="https://i.ibb.co/fdsWqy83/logo-text.jpg"
+                                            alt="logo-text" border="0"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="submit-right">
+                                <p>Link to Submit:</p>
+                                <div class="mb-30"><a
+                                        href="https://forms.clickup.com/2239256/f/24arr-55154/GDUG78VQCSTL7QXVOR">
+                                        https://forms.clickup.com/2239256/f/24arr-55154/GDUG78VQCSTL7QXVOR
+                                    </a>
+                                </div>
+                                <p>Link to download brand data assets:</p>
+                                <div class="mb-30">
+                                    <a
+                                        href="https://drive.google.com/drive/folders/1F1Y4MIFucMVo0ePVdbg3HGTmH57S_WW4?usp=share_link">
+                                        https://drive.google.com/drive/folders/1F1Y4MIFucMVo0ePVdbg3HGTmH57S_WW4?usp=share_link
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="submit-note">
+                                If you cannot embed files, send a ZIP with additional files; but the self-contained
+                                single-file option is <strong>preferred</strong>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="product">
+                    <div class="">
+                        <div class="req-content">
+                            <div class="brand-title">Brand
+                                Data</div>
+                            <div class="brand-desc">
+                                <p>
+                                    The rest of the slides in this presentation are a
+                                    collection of brand data to help structure your webpage
+                                    and give you content to fill. <br />
+                                    If infographics are left as images that is intentional for
+                                    you to re-create it in a unique way, not to copy-paste.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="border-btm"></div>
+                        <div class="brand-bottom">
+                            <div class="cell-logo-part">
+                                <div class="start-logo">
+                                    <p><strong>Logos</strong></p>
+                                    <a href="https://ibb.co/SXVFPVfW"><img
+                                            src="https://i.ibb.co/JRrDKr30/Slide-4-Logo-1.png" alt="Slide-4-Logo-1"
+                                            border="0" /></a>
+                                </div>
+                                <div class="cell-bg-blue">
+                                    <a href="https://ibb.co/zWCmC8MR"><img
+                                            src="https://i.ibb.co/0p1n1B7M/Slide-4-Logo-2.png" alt="Slide-4-Logo-2"
+                                            border="0"></a>
+                                </div>
+
+
+                            </div>
+                            <div class="cell-main-part">
+                                <h3>Main product, ChronoNAD+:</h3>
+                                <h4>Product Description:</h4>
+                                <p>
+                                    ChronoNAD+ is a dietary supplement taken once a day. As we age, our NAD+ levels
+                                    decline,
+                                    impacting our cellular health and energy. Our supplement is designed to restore
+                                    these
+                                    levels,
+                                    helping you feel more vibrant and energized.
+                                </p>
+                            </div>
+
+                            <div class="cell-product">
+                                <a href="https://ibb.co/mF2pdVgQ"><img
+                                        src="https://i.ibb.co/NnJRfdbw/Slide-4-Product.png" alt="Slide-4-Product"
+                                        border="0" /></a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="content">
+                    <div>
+                        <div class="req-content border-btm">
+                            <div class="title">Infographics<br />& Content</div>
+                            <div class="subtitle">
+                                These infographics are ideas for your additional sections. Also,
+                                whenever we make claims, we like to include a source to
+                                scientific journals below it. If you do this, you don't have to
+                                include a real one, just the mockup text.
+                            </div>
+                        </div>
+                        <div class="cellular-container">
+                            <div class="cell-card">
+                                <a href="https://ibb.co/WW8SVW1j"><img
+                                        src="https://i.ibb.co/PZXBDZ80/Slide-7-Infographic-1.png"
+                                        alt="Slide-7-Infographic-1" border="0" /></a>
+
+                                <div class="nad-content">
+                                    <div>
+                                        <p>Headline and Subtext Ideas:</p>
+                                        <ul>
+                                            <li>Headline: Why Is NAD+ Your Cellular
+                                                Fuel? </li>
+                                            <li>Subtext: Restore your cellular energy
+                                                and vitality. </li>
+                                            <li>Headline: Unlock Your Potential</li>
+                                            <li>Subtext: The key to a more vibrant
+                                                you lies in your cells.</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p>Call-to-Action (CTA) Text:</p>
+                                        <ul>
+                                            <li>"Shop Now" </li>
+                                            <li>"Learn More" </li>
+                                            <li>"Discover The Formula"</li>
+                                            <li>"Fuel My Cells" </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="cell-graph"><a href="https://ibb.co/XrvdrNqb"><img
+                                        src="https://i.ibb.co/Pvfbv3dN/Slide-6-Infographic-2.png"
+                                        alt="Slide-6-Infographic-2" border="0" /></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="dos">
+                    <div class="dos-donts-container">
+                        <div class="dos">
+                            <h2>Do’s</h2>
+
+                            <div class="do-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="do-text">
+                                    <strong>Use Official Color Palette</strong>
+                                    <p>Ensure you use the brand’s specified colours in all assets.</p>
+                                </div>
+                            </div>
+
+                            <div class="do-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="do-text">
+                                    <strong>Typography Consistency</strong>
+                                    <p>Use the specified fonts and styles in the brand guidelines for all written
+                                        communications.</p>
+                                </div>
+                            </div>
+
+                            <div class="do-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="do-text">
+                                    <strong>Follow Imagery Style</strong>
+                                    <p>Use photography and illustrations that match the brand’s aesthetic.</p>
+                                </div>
+                            </div>
+
+                            <div class="do-item">
+                                <i class="fas fa-check-circle"></i>
+                                <div class="do-text">
+                                    <strong>Consistent Messaging</strong>
+                                    <p>Ensure the message delivered is aligned with our brand values.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="donts">
+                            <h2>Don’ts</h2>
+
+                            <div class="dont-item">
+                                <i class="fas fa-times-circle"></i>
+                                <div class="dont-text">
+                                    <strong>Inappropriate Color Usage</strong>
+                                    <p>Do not use colours that are not included in the brand’s official palette for
+                                        brand representation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </sction>
+    </main>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const cardHeaderSpan = document.querySelector('.card-header span');
+        const sections = document.querySelectorAll('.main-content > div[id]');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-toggle');
+        const navMenu = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('href').substring(1);
+                const sectionName = this.textContent;
+                cardHeaderSpan.textContent = sectionName;
+
+                sections.forEach(sec => sec.style.display = "none");
+                const activeSection = document.getElementById(sectionId);
+                if (activeSection) {
+                    activeSection.style.display = "block";
+                }
+                navMenu.classList.remove('active');
+            });
+        });
+
+        sections.forEach((sec, index) => {
+            sec.style.display = index === 0 ? "block" : "none";
+        });
+    </script>
+
+</body>
+
+</html>
